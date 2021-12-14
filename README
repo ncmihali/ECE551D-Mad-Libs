@@ -1,6 +1,7 @@
-For this evaluative assignment, you will write a program to tell a random
-story (kind of like Mad Libs) that generates a story, given a story
-template and a list of words to choose from.
+# Auto-complete Mad Libs Program
+
+Program to tell a random story (kind of like Mad Libs) that generates a story, 
+given a story template and a list of words to choose from.
 
 For example, if you had a story like the one in story.txt:
 
@@ -63,24 +64,7 @@ of that data structure.
 The definitions of these functions are in provided.o, which the Makefile
 will link with your code.
 
-You MUST submit a Makefile that compiles the program for each step, and
-each step must work as described. If you name your source code files like
-we suggest, you will not need to modify the provided Makefile, but you
-may if you wish.
-
-Your grade comprises the four steps and code quality with the following
-breakdown:
-
-Step 1:        25
-Step 2:        20
-Step 3:        25
-Step 4:        20
-Code quality:  10
------------------
-Total:        100
-
-Step 1
-===========================================================================
+# Step 1
 
 Write the program story-step1, which takes one command line argument: the
 name of the file to read the story template from. This program should parse
@@ -108,8 +92,7 @@ story-step1.c.
 Once you have tested this step to your satisfaction, add/commit/push before
 going on to the next step.
 
-Step 2
-===========================================================================
+# Step 2
 
 Write the program story-step2, which takes one command line argument: the
 name of the file with the categories and words. This program should read
@@ -138,11 +121,7 @@ appropriate error message and exit with a failure status.
 Again, consider how you can write as much of this code in rand_story.c in a
 re-usable way.
 
-Once you have tested this step to your satisfaction and ensured that step 1
-still works, add/commit/push before going on to the next step.
-
-Step 3
-===========================================================================
+# Step 3
 
 Write the program story-step3, which takes two command line arguments: the
 name of the file with the categories/words and the name of the file for the
@@ -177,11 +156,7 @@ Hint: You will want a way to keep track of words that have been used. The
 struct category_t already has an array of words and the length of that
 array. You could maintain a category_t that keeps track of used words.
 
-Once you have tested this step to your satisfaction and ensured that steps
-1 and 2 still work, add/commit/push before going on to the next step.
-
-Step 4
-===========================================================================
+# Step 4
 
 Write the program story-step4, which takes one optional and two required
 command line arguments: an option "-n" indicating no reuse of words, the 
@@ -204,67 +179,3 @@ scary cave. One day, it left its scary cave and met a dragon.
 
 If this program is run without the "-n" argument, its behavior should be
 identical to the program in step 3.
-
-Hint: consider passing an int to your story telling function that indicates
-whether words should be removed from the data structure after they are used
-in the story.
-
-Once you have tested this step to your satisfaction, and ensured that steps
-1, 2, and 3 still work, add/commit/push.
-
-Code Quality
-===========================================================================
-
-Your code will also be graded for its quality. Your grader will assess the
-quality of the abstraction, naming, formatting, and documentation of your
-code. For this assignment, make sure the functions you write use good
-abstraction, variable names are meaningful, formatting is standard (you can
-do this automatically by saving in Emacs; otherwise, you should run
-clang-format on your source code file), and that you document your work by
-adding a comment describing each of the functions you write, as well as a
-comment if you write anything complex or unusual.
-
-Testing
-===========================================================================
-
-We will provide a "pregrader" you can use to run your own test cases
-to make sure your code's output agrees with the output of our
-implementation. Before the deadline, when you do 'grade', the
-pregrader will look for a file testcases.txt with the following
-format: 
-
-#error
-story-step1 invalid.txt
-story-step3 err_words.txt story.txt
-
-#success
-story-step2 words.txt
-story-step4 -n words.txt story2.txt
-
-That is, a section with the #error header containing error test cases,
-which should give an appropriate error message and exit with a failure
-status. You are free to make your own test files.
-
-The next section has a #success header and is followed by test cases
-that should have a success status. For these the pregrader will check
-that your results match ours.
-
-You may write as many test cases as you like, but you are limited to
-20 seconds of compute time by the pregrader.
-
-Reminders
-===========================================================================
-
-Before the hard deadline, your code will be graded by the pregrader
-that runs your test cases. After the hard deadline, your code will be
-graded ONCE. You may run "grade" as many times as you like, but the
-last commit after which you run grade before the deadline will be your
-submission. Grading quality takes some time, so expect your real grade
-to take about a week to come back.
-
-When testing, you should think of error cases, corner cases, and
-design your own test inputs. Your code should valgrind without errors
-on all cases and without memory leaks on all success cases.
-
-This is an INDIVIDUAL assignment. You are only allowed to communicate
-regarding this assignment with an instructor or TA.
